@@ -1,0 +1,16 @@
+Package: dis.sim.mod
+Title: What the Package Does (One Line, Title Case)
+Version: 0.0.1
+Authors@R: 
+    person(given = "Alfredo",
+           family = "Marquez",
+           role = c("aut", "cre"),
+           email = "alfredo.g.marquez@example.com",
+           comment = c(ORCID = "YOUR-ORCID-ID"))
+Description: Houses functions created for the understanding of Discrete Simulation
+  Modeling.
+License: GPL-3
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.1
