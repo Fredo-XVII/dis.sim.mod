@@ -9,12 +9,14 @@ f_a_h(a, h, step_size, ...)
 \arguments{
 \item{a}{number, that centers the vector}
 
-\item{h}{number, the length from the center that is +/- from the center.}
+\item{h}{number, the point from the center will be is +/- from the center.}
 
 \item{step_size}{number, size of steps between numbers.}
+
+\item{...}{arguments passed to \code{seq()} function.}
 }
 \value{
-a vector from a-h to a+h, centered on a, by step size \code{step_size.}
+A vector from a-h to a+h, centered on a, by step size \code{step_size.}
 }
 \description{
 Create vector centered on \code{a} and bounded by \code{h}, by step size \code{step_size}.
@@ -24,7 +26,7 @@ Creates a vector from a-h to a+h, centered on a, by step size \code{step_size}.
 }
 \examples{
 {
-vector <- f_a_h(a = 0, h = 10, )
+ vector <- f_a_h(a = 0, h = 10, step_size = 1)
 }
 
 }

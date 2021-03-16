@@ -21,7 +21,8 @@ usethis::use_package_doc()
 usethis::use_pipe()
 usethis::use_r("f_a_h")
 usethis::use_r("lim_dx1_dx2")
-usethis::use_r("limit_at_a")
+usethis::use_r("limit_at_a") 
+usethis::use_r("dy_dx") 
 
 # Limiting function 
 #dx_1 <- function(x1,x2) {(fx_1(x1) - fx_1(x2))/(x1-x2)}
@@ -39,12 +40,11 @@ limit_at_a <- function(a,h.fun,step_size,...) {
 # Add Packages
 
 ## Import Packages
-import_pkg_list <- c("RPostgres","stringr","dbplyr","dplyr","rlang","tidyr","askpass","ssh",
-                     "glue", "purrr")
+import_pkg_list <- c("magrittr","purrr")
 purrr::map2(import_pkg_list, .y = "Imports", .f = usethis::use_package)
 
 ## Suggests Packages
-suggests_pkg_list <- c("roxygen2","kableExtra","remotes","knitr","rmarkdown","testthat","covr")
+suggests_pkg_list <- c("roxygen2","remotes","knitr","rmarkdown","testthat")
 
 purrr::map2(suggests_pkg_list, .y = "Suggests", .f = usethis::use_package)
 

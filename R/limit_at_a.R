@@ -7,13 +7,14 @@
 #'
 #' @param a number, the number which is being limited.
 #' @param h number, the point from the center, or a, that is +/- from the center.
+#' @param .fun function, a mathematical function defined by function().
 #' @param step_size number, size of steps between numbers, or a and h.
 #' @param ... arguments passed to `seq()`
 #'
 #' @return A vector of points that replicate the limit as they approach a.
 #' 
-#' @import magrittr %>%
-#' @import purrr partial
+#' @importFrom magrittr %>%
+#' @importFrom stats na.omit
 #' 
 #' @examples {
 #'  fx2 <- function(x) {x^2}
@@ -25,16 +26,7 @@
 
 limit_at_a <- function(a,h,.fun,step_size,...) {
   delta_range <- f_a_h(a = a, h = h, step_size = step_size) # a +/- h, a vector centered on point a.
-  limit_range <- lim_dx1_dx2(x1 = a, x2 = delta_range, .fun = .fun) # associated limits from delta_range
+  limit_range <- slope_x1_x2(x1 = a, x2 = delta_range, .fun = .fun) # associated limits from delta_range
   limit_at_a <- limit_range[(which(is.na(limit_range))-1):(which(is.na(limit_range))+1)] %>% na.omit() %>% mean()
   limit_at_a
 }
-
-dy_dx <- function(.fun, ...) {
-  limit_at_a_vector <- purrr::partial(.f = limit_at_a, .fun = .fun)
-  dy_dx <- purrr::pmap_dbl(.l = list(...), .f = limit_at_a_vector)
-  dy_dx
-}
-
-dy_dx(.fun = fx2, a = x_vector, h = 10, step_size = 0.1)
-
