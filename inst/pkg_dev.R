@@ -24,19 +24,6 @@ usethis::use_r("lim_dx1_dx2")
 usethis::use_r("limit_at_a") 
 usethis::use_r("dy_dx") 
 
-# Limiting function 
-#dx_1 <- function(x1,x2) {(fx_1(x1) - fx_1(x2))/(x1-x2)}
-lim_dx <- function(x1,x2,.fun) {(.fun(x1) - .fun(x2))/(x1-x2)}
-
-# Combine the functions above to built the limit function: `limit_at_a()`
-# Derives the derivative @ point a.
-limit_at_a <- function(a,h.fun,step_size,...) {
-  delta_range <- f_a_h(a = a, h = h, step_size = step_size, ...) # a +/- h, a vector centered on point a.
-  limit_range <- lim_dx1_dx2(x1 = a, x2 = delta_range, .fun = .fun) # associated limits from delta_range
-  limit_at_a <- limit_range[(which(is.na(lim_2))-1):(which(is.na(lim_2))+1)] %>% na.omit() %>% mean()
-  limit_at_a
-}
-
 # Add Packages
 
 ## Import Packages
