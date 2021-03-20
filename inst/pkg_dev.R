@@ -20,9 +20,11 @@ usethis::use_package_doc()
 # Create/add functions
 usethis::use_pipe()
 usethis::use_r("f_a_h")
-usethis::use_r("lim_dx1_dx2")
+usethis::use_r("slope_dx1_dx2")
 usethis::use_r("limit_at_a") 
-usethis::use_r("dy_dx") 
+usethis::use_r("dy_dx")
+usethis::use_r("An_+_1") 
+usethis::use_r("quad_x_roots")
 
 # Add Packages
 

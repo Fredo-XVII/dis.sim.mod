@@ -3,6 +3,7 @@
 export(dy_dx)
 export(f_a_h)
 export(limit_at_a)
+export(quad_x_roots)
 export(slope_x1_x2)
 importFrom(magrittr,"%>%")
 importFrom(purrr,partial)
